@@ -1,0 +1,11 @@
+table {
+    width: 800px;
+    margin: 100px auto;
+}
+
+th {
+    width: 200px;
+    background-color: beige;
+    border-color: grey;
+    border-style: solid;
+}
