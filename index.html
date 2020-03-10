@@ -3,33 +3,33 @@
     <head>
         <title>Library</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Rhodium+Libre&display=swap" rel="stylesheet">
     </head>
     <body>
         <content>
-            <form>
-                <input type="text" name="title" placeholder="The Hobbit">
-                <input type="text" name="author" placeholder="J.R.R. Tolkien">
-                <input type="number" name="pages" placeholder="295">
-                <p>Read yet?</p>
-                <div>
-                    <input type="radio" id="no"
-                     name="isRead">
-                    <label for="no">No</label>
-                
-                    <input type="radio" id="yes"
-                     name="isRead">
-                    <label for="yes">Yes</label>
+            <div class="menu">
+                <h1>My Library</h1>
+            <div class="inner-menu">
+                <input class="input-field" type="text" name="title" placeholder="Title">
+                <input class="input-field"type="text" name="author" placeholder="Author">
+                <div class="pages">
+                    <label class="label"for="pages">Pages</label>
+                    <input class="input-field" type="number" name="pages" placeholder="0">
+                </div>
+                <div class="read">
+                    <label class="label">Read?</label>
+                    <div class="read-options">
+                        <label for="yes">Yes</label>
+                        <input type="radio" id="yes" name="isRead">
+                        <label for="no">No</label>
+                        <input type="radio" id="no" name="isRead">                    
+                    </div>
                 </div>
                 
-            </form>
-            <table>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Pages</th>
-                    <th>Read Yet?</th>
-                </tr>
-            </table>
+                <button>ADD BOOK</button>
+            </div>
+            </div>
+            
         </content>
         <script src="library.js" type="text/javascript"></script>
     </body>

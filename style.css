@@ -1,11 +1,75 @@
-table {
-    width: 800px;
-    margin: 100px auto;
+body {
+    background-color: #75957c;
+    font-family: 'Rhodium Libre';
 }
 
-th {
-    width: 200px;
-    background-color: beige;
-    border-color: grey;
-    border-style: solid;
+h1 {
+    font-weight: 100;
+    display: inline-block;
+    line-height: 0.5em;
+    color: white;
+}
+
+.inner-menu {
+    width: min-content;
+    padding: 1em;
+    background-color: #EEEEEE;
+}
+
+.input-field {
+    margin: 0.4em 0 0.4em 0;
+    display: inline-block;
+    color: #636363;
+    padding: 0.5em;
+    border: none;
+    background-color: #C4C4C4;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  width: 7em;
+  margin: 0.4 auto;
+  float: right;
+}
+
+.read {
+    overflow: hidden;
+    margin: 0.4em 0 0.4em 0;
+}
+
+.pages {
+    overflow: hidden;
+}
+
+.pages > label {
+    margin-top: 0.45em;
+}
+
+.label {
+    float: left;
+}
+
+.read-options {
+    float: right;
+}
+
+.inner-menu > button {
+    -webkit-appearance: none;
+    border: none;
+    display: block;
+    margin: 0.5em auto 0 auto;
+    padding: 0.4em 3em;
+    background-color: #C4C4C4;
+}
+
+.menu {
+    width: min-content;
+    text-align: center;
 }
