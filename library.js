@@ -15,34 +15,35 @@ function Book(title, author, pages, isRead) {
     this.isRead = isRead;
 }
 
-Book.prototype.info = function () {
-    let readMsg = "not read yet";
-    if (this.isRead) readMsg = "read";
-    return `${this.title}, ${this.author}, ${this.pages} pages, ${readMsg}`;
-}
-
-function getBook() {
+Book.prototype.getElement = function () {
     let bookCard = document.createElement("DIV");
-    const title = titleField.value;
-    const author = authorField.value;
-    const pages = pagesField.value;
-    // check if fields empty
-    if (!title || !author || !pages) {
-        alert("One or more fields not provided.")
-        return null;
-    }
-    const isRead = readOptions.querySelector("input[name=isRead]:checked").value;
     bookCard.className = "book-card";
-    bookCard.read = isRead;
-    // get string
-    let string = `<div class="text"><b>${title.toUpperCase()}</b><br/>BY ${author.toUpperCase()}<br/>${pages} PAGES</div>`;
+    bookCard.read = this.isRead;
+    let string = `<div class="text">
+                    <b>${this.title.toUpperCase()}</b>
+                    <br/>BY ${this.author.toUpperCase()}
+                    <br/>${this.pages} PAGES
+                  </div>`;
     bookCard.innerHTML = string;
     return bookCard;
 }
 
+function getBook() {
+    const title = titleField.value;
+    const author = authorField.value;
+    const pages = pagesField.value;
+    const isRead = readOptions.querySelector("input[name=isRead]:checked").value;
+    if (!title || !author || !pages) {
+        alert("One or more fields not provided.")
+        return null;
+    }
+    return new Book(title, author, pages, isRead);
+}
+
 button.addEventListener("click", () => {
-    let bookCard = getBook();
-    if (bookCard) {
-        bookView.appendChild(bookCard);
+    let book = getBook();
+    if (book) {
+        // TODO: check if read or not, add to appropriate element
+        bookView.appendChild(book.getElement());
     }
 });
