@@ -6,31 +6,41 @@
         <link href="https://fonts.googleapis.com/css?family=Rhodium+Libre&display=swap" rel="stylesheet">
     </head>
     <body>
-        <content>
+        <div class="left-side">
             <div class="menu">
                 <h1>My Library</h1>
-            <div class="inner-menu">
-                <input class="input-field" type="text" name="title" placeholder="Title">
-                <input class="input-field"type="text" name="author" placeholder="Author">
-                <div class="pages">
-                    <label class="label"for="pages">Pages</label>
-                    <input class="input-field" type="number" name="pages" placeholder="0">
-                </div>
-                <div class="read">
-                    <label class="label">Read?</label>
-                    <div class="read-options">
-                        <label for="yes">Yes</label>
-                        <input type="radio" id="yes" name="isRead">
-                        <label for="no">No</label>
-                        <input type="radio" id="no" name="isRead">                    
+                <form autocomplete="off">
+                    <div class="inner-menu">
+                        <input class="input-field" type="text" name="title" placeholder="Title">
+                        <input class="input-field" type="text" name="author" placeholder="Author">
+                        <div class="pages">
+                            <label class="label"for="pages">Pages</label>
+                            <input class="input-field" type="number" name="pages">
+                        </div>
+                        <div class="read">
+                            <label class="label">Read?</label>
+                            <div class="read-options">
+                                <label for="yes">Yes</label>
+                                <input type="radio" id="yes" value=true name="isRead" checked>
+                                <label for="no">No</label>
+                                <input type="radio" id="no" value=false name="isRead">                    
+                            </div>
+                        </div>
+                        <button type="button">ADD BOOK</button>
                     </div>
-                </div>
-                
-                <button>ADD BOOK</button>
+                </form>
             </div>
+        </div>
+        <div class="right-side">
+            <div class="nav-bar">
+                <div class="tab">Read</div>
+                <div class="tab">Unread</div>
             </div>
-            
-        </content>
+            <div class="space"></div>
+            <div class="book-view">
+                <div class="book-card"><div class="text"><b>THE HOBBIT</b><br/>BY J.R.R. TOLKIEN <br/>295 PAGES</div></div>
+            </div>
+        </div>
         <script src="library.js" type="text/javascript"></script>
     </body>
 </html>

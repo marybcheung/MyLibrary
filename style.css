@@ -1,19 +1,38 @@
+html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: #75957c;
     font-family: 'Rhodium Libre';
+    display: flex;
+    height: 100%;
+}
+
+html, body {
+    margin:0;
+    padding:0;
 }
 
 h1 {
     font-weight: 100;
     display: inline-block;
-    line-height: 0.5em;
+    line-height: 0.4em;
+    margin: 0 0 0.3em 0;
     color: white;
+    padding-bottom: 0.2em;
+    border-bottom: #AC1515 solid 3px;
 }
 
 .inner-menu {
+    height: min-content;
+    font-family: Arial;
     width: min-content;
     padding: 1em;
     background-color: #EEEEEE;
+    border: #C9C9C9 5px solid;
 }
 
 .input-field {
@@ -23,6 +42,10 @@ h1 {
     padding: 0.5em;
     border: none;
     background-color: #C4C4C4;
+}
+
+.input-field:hover {
+    background-color: rgb(161, 161, 161);
 }
 
 input::-webkit-outer-spin-button,
@@ -49,7 +72,7 @@ input[type=number] {
 }
 
 .pages > label {
-    margin-top: 0.45em;
+    margin-top: 0.7em;
 }
 
 .label {
@@ -64,12 +87,93 @@ input[type=number] {
     -webkit-appearance: none;
     border: none;
     display: block;
-    margin: 0.5em auto 0 auto;
+    margin: 0.8em auto 0 auto;
     padding: 0.4em 3em;
     background-color: #C4C4C4;
 }
 
+.inner-menu > button:hover {
+    background-color: rgb(161, 161, 161);
+}
+
 .menu {
+    margin: 60px auto;
     width: min-content;
     text-align: center;
+}
+
+.book-view {
+    padding: 0 15px 10px 15px;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #EEEEEE;
+    border-left: 1px solid #C9C9C9;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: calc(100% - 30px)
+}
+
+.book-card {
+    margin: 10px;
+    flex: 0 0 70px 100px;
+    width: 160px;
+    height: 220px;
+    background-color: #CF9A9A;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+.book-card .text b {
+    text-decoration: underline;
+}
+
+.text {
+    padding-top: 35px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.left-side {
+    flex: 0.7;
+    display: table;
+}
+
+.right-side {
+    display:flex;
+    flex-direction:column;
+    flex: 2;
+}
+
+.nav-bar {
+    width: 100%;
+    height: min-content;
+    margin: 31px 0 0 0;
+    display: flex;
+}
+
+.nav-bar .tab {
+    flex: 0 0 70px;
+    border: solid #C9C9C9;
+    border-width: 2px 1px 0 1px;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: #EEEEEE;
+}
+
+.nav-bar .tab:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.space {
+    width: 100%;
+    height: 18px;
+    background-color: #EEEEEE;
+    border-left: 1px solid #C9C9C9;
 }
