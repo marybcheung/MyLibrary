@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Library</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Rhodium+Libre&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="left-side">
-            <div class="menu">
-                <h1>My Library</h1>
-                <form autocomplete="off">
-                    <div class="inner-menu">
-                        <input class="input-field" type="text" name="title" placeholder="Title">
-                        <input class="input-field" type="text" name="author" placeholder="Author">
-                        <div class="pages">
-                            <label class="label"for="pages">Pages</label>
-                            <input class="input-field" type="number" name="pages">
-                        </div>
-                        <div class="read">
-                            <label class="label">Read?</label>
-                            <div class="read-options">
-                                <label for="yes">Yes</label>
-                                <input type="radio" id="yes" value=true name="isRead" checked>
-                                <label for="no">No</label>
-                                <input type="radio" id="no" value=false name="isRead">                    
-                            </div>
-                        </div>
-                        <button type="button">ADD BOOK</button>
-                    </div>
-                </form>
+  <head>
+    <title>Library</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Rhodium+Libre&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="left-side">
+      <div class="menu">
+        <h1>My Library</h1>
+        <form autocomplete="off">
+          <div class="inner-menu">
+            <input class="input-field" type="text" name="title" placeholder="Title">
+            <input class="input-field" type="text" name="author" placeholder="Author">
+            <div class="pages">
+              <label class="label" for="pages">Pages</label>
+              <input class="input-field" type="number" name="pages">
             </div>
-        </div>
-        <div class="right-side">
-            <div class="nav-bar">
-                <div class="tab">Read</div>
-                <div class="tab">Unread</div>
+            <div class="read">
+              <label class="label">Read?</label>
+              <div class="read-options">
+                <label for="yes">Yes</label>
+                <input type="radio" id="yes" value=true name="isRead" checked>
+                <label for="no">No</label>
+                <input type="radio" id="no" value=false name="isRead">
+              </div>
             </div>
-            <div class="space"></div>
-            <div class="book-view"></div>
-        </div>
-        <script src="library.js" type="text/javascript"></script>
-    </body>
+            <button type="button">ADD BOOK</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="nav-bar">
+        <div class="tab active">Read</div>
+        <div class="tab">Unread</div>
+      </div>
+      <div class="space"></div>
+      <div class="book-view active" id="tab-read"></div>
+      <div class="book-view" id="tab-unread"></div>
+    </div>
+    <script src="library.js" type="text/javascript"></script>
+  </body>
 </html>
