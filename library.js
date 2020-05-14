@@ -10,23 +10,6 @@ const readBookView = document.getElementById("tab-read");
 const unreadBookView = document.getElementById("tab-unread");
 let myLibrary = {};
 
-firebase.database().ref('/books/').once('value').then(function(snapshot) {
-  let allData = snapshot.val();
-  for (let key in allData) {
-    let data = allData[key];
-    let book = new Book(data.title, data.author, data.pages, data.isRead);
-    let bookCard = book.constructElement();
-    bookCard.key = key;
-    book.key = key;
-    if (book.isRead) { // switch on type
-      readBookView.appendChild(bookCard);
-    } else {
-      unreadBookView.appendChild(bookCard);
-    }
-    myLibrary[key] = book;
-  }
-});
-
 function Book(title, author, pages, isRead) {
   this.title = title;
   this.author = author;
@@ -172,13 +155,33 @@ function toggleTabsAndBookViews() {
   }
 }
 
-button.addEventListener("click", addBookToLibrary);
-
-for (let tab of tabs) {
-  tab.addEventListener("click", () => {
-    if (!tab.className.includes("active")) {
-     toggleTabsAndBookViews();
+function main() {
+  firebase.database().ref('/books/').once('value').then(function(snapshot) {
+    let allData = snapshot.val();
+    for (let key in allData) {
+      let data = allData[key];
+      let book = new Book(data.title, data.author, data.pages, data.isRead);
+      let bookCard = book.constructElement();
+      bookCard.key = key;
+      book.key = key;
+      if (book.isRead) { // switch on type
+        readBookView.appendChild(bookCard);
+      } else {
+        unreadBookView.appendChild(bookCard);
+      }
+      myLibrary[key] = book;
     }
   });
+
+  button.addEventListener("click", addBookToLibrary);
+
+  for (let tab of tabs) {
+    tab.addEventListener("click", () => {
+      if (!tab.className.includes("active")) {
+      toggleTabsAndBookViews();
+      }
+    });
+  }
 }
 
+main();
