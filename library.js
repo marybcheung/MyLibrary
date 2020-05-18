@@ -1,10 +1,10 @@
-const button = document.getElementsByTagName("button")[0];
-const titleField = document.getElementsByName("title")[0];
-const authorField = document.getElementsByName("author")[0];
-const pagesField = document.getElementsByName("pages")[0];
-const readOptions = document.getElementsByClassName("read-options")[0];
-const tabs = document.getElementsByClassName("tab");
-const bookViews = document.getElementsByClassName("book-view");
+const button = document.querySelector("button");
+const titleField = document.querySelector("input[name='title']");
+const authorField = document.querySelector("input[name='author']");
+const pagesField = document.querySelector("input[name='pages']");
+const readOptions = document.querySelector(".read-options");
+const tabs = document.querySelectorAll(".tab");
+const bookViews = document.querySelectorAll(".book-view");
 const parser = new DOMParser();
 const readBookView = document.getElementById("tab-read");
 const unreadBookView = document.getElementById("tab-unread");
@@ -139,20 +139,20 @@ function addBookToLibrary() {
 }
 
 function toggleTabsAndBookViews() {
-  for (let tab of tabs) {
+  tabs.forEach((tab) => {
     if (tab.className.includes("active")) {
       tab.className = "tab";
     } else {
       tab.className = "tab active";
     }
-  }
-  for (let bookView of bookViews) {
+  })
+  bookViews.forEach((bookView) => {
     if (bookView.className.includes("active")) {
       bookView.className = "book-view";
     } else {
       bookView.className = "book-view active";
     }
-  }
+  })
 }
 
 function main() {
